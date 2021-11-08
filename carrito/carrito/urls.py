@@ -11,7 +11,12 @@ urlpatterns = [
     
     path('api/token/', obtain_auth_token, name='obtain-token'),
 
+    # get y post
     path('articles/', ArticleView.as_view()),
+
+    # get
     path('detalle/<int:id>', DetalleView.as_view()),
+
+    # post
     path('detalle/', AddDetalleView.as_view()),
 ]

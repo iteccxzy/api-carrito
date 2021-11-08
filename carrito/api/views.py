@@ -1,3 +1,4 @@
+from django.db.models import manager
 from django.shortcuts import render
 
 # Create your views here.
@@ -9,7 +10,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import generics
 
-from .serializers import ArticleSerializer, DetalleSerializer
+from .serializers import ArticleSerializer, DetalleSerializer, DetalleSerializerSave
 from .models import Article, Detalle
 
 
@@ -35,8 +36,9 @@ class DetalleView(APIView):
     permission_classes = (IsAuthenticated, )
 
     def get(self, request, id):
-        post = Detalle.objects.get(article_id=id)
-        serializer = DetalleSerializer(post)
+        # post = Detalle.objects.get(article_id=id)
+        post = Detalle.objects.filter(article_id=id)
+        serializer = DetalleSerializer(post, many=True)
         return Response(serializer.data)
 
 
@@ -44,8 +46,13 @@ class AddDetalleView(APIView):
     permission_classes = (IsAuthenticated, )
 
     def post(self, request, *args, **kwargs):
-        serializer = DetalleSerializer(data=request.data)
+        print(request.data, 'testing')
+        serializer = DetalleSerializerSave(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            try:
+                
+                serializer.save()
+            except:
+                print('no se puede guardar')
             return Response(serializer.data)
         return Response(serializer.errors)

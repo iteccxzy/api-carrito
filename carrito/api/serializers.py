@@ -11,3 +11,8 @@ class DetalleSerializer(serializers.ModelSerializer):
     class Meta: 
         model = Detalle
         fields = ('color', 'talle', 'cantidad')
+
+class DetalleSerializerSave(serializers.ModelSerializer):
+    class Meta: 
+        model = Detalle
+        fields = ('article', 'color', 'talle', 'cantidad')
