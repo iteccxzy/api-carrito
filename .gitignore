@@ -1,3 +1,6 @@
 carrito/api/__pycache__/
 Scripts/
 Lib/
+carrito/carrito/__pycache__/
+.gitignore
+pyvenv.cfg
