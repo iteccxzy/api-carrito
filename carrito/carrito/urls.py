@@ -8,10 +8,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # solo envio de token
-    path('api-auth/', include('rest_framework.urls')),
+    # path('api-auth/', include('rest_framework.urls')),
     
     # obtiene el token cuando el usuario envia el mail y password
-    path('api/token/', obtain_auth_token, name='obtain-token'),
+    # path('api/token/', obtain_auth_token, name='obtain-token'),
 
     # get y post
     path('articles/', ArticleView.as_view()),
