@@ -1,0 +1,382 @@
+{
+	"info": {
+		"_postman_id": "49713a61-b8ff-441e-8781-a64a6b7417b4",
+		"name": "carrito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "articles",
+			"item": [
+				{
+					"name": "nuevo articulo",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "Token 476aeec3def35049046acc89653bbde8cc1ab4fd",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"marca\": \"rebook\",\r\n\"modelo\": \"training\",\r\n\"precio\": 13000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/articles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lista articulos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Token 476aeec3def35049046acc89653bbde8cc1ab4fd",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "marca",
+									"value": "topper",
+									"type": "text"
+								},
+								{
+									"key": "modelo",
+									"value": "running",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "7500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/articles/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"articles",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "detalle",
+			"item": [
+				{
+					"name": "nuevo detalle",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Token 476aeec3def35049046acc89653bbde8cc1ab4fd",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"article\": 3,\r\n\"color\": \"gris\",\r\n\"talle\": 40,\r\n\"cantidad\": 20}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/detalle/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"detalle",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lista detalle",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "Token 476aeec3def35049046acc89653bbde8cc1ab4fd",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "marca",
+									"value": "topper",
+									"type": "text"
+								},
+								{
+									"key": "modelo",
+									"value": "running",
+									"type": "text"
+								},
+								{
+									"key": "precio",
+									"value": "7500",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/detalle/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"detalle",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin2",
+									"type": "text"
+								},
+								{
+									"key": "password1",
+									"value": "test.1357",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "test.1357",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/rest-auth/registration/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rest-auth",
+								"registration",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test.1357",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/rest-auth/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"rest-auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin2",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "test.1357",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/token/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

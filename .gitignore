@@ -4,3 +4,4 @@ Lib/
 carrito/carrito/__pycache__/
 .gitignore
 pyvenv.cfg
+carrito/carrito/__pycache__/

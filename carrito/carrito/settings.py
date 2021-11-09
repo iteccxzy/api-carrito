@@ -39,9 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
-    'rest_auth',
     'api',
-        'corsheaders',
+    'corsheaders',
+    # django-rest-auth 
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
 
 MIDDLEWARE = [
@@ -138,7 +143,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
         'rest_framework.authentication.TokenAuthentication',
-        
+
     ]
 }
 
